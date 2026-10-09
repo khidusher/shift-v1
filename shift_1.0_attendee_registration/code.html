@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SHIFT 1.0 - Beyond The Degree | UENR</title>
+<!-- Tailwind CSS CDN with Forms & Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#050D2A',
+              dark: '#08164D',
+              deep: '#0B2475',
+              blue: '#0E3EDA',
+              electric: '#1A56FF',
+              accent: '#38BDF8',
+              glow: '#60A5FA',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          },
+          backgroundImage: {
+            'hero-radial': 'radial-gradient(circle at 50% 20%, rgba(26, 86, 255, 0.45) 0%, rgba(11, 36, 117, 0.95) 60%, rgba(5, 13, 42, 0.99) 100%)',
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles: Marquee, Effects & Scrollbars -->
+<style data-purpose="custom-animations">
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee-infinite {
+      display: flex;
+      width: 200%;
+      animation: marquee 22s linear infinite;
+    }
+    .animate-marquee-infinite:hover {
+      animation-play-state: paused;
+    }
+  </style>
+<style data-purpose="glass-and-glow">
+    .glass-pill {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    .speaker-card-overlay {
+      background: linear-gradient(180deg, rgba(8, 22, 77, 0.05) 30%, rgba(5, 13, 42, 0.85) 75%, rgba(5, 13, 42, 0.98) 100%);
+    }
+    .text-glow {
+      text-shadow: 0 0 35px rgba(56, 189, 248, 0.45);
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<meta content="web_standard" name="shell-type"/></head>
+<body class="bg-[#06123D] text-white font-sans antialiased selection:bg-brand-accent selection:text-brand-navy min-h-screen flex flex-col">
+<!-- BEGIN: MainHeader -->
+<header class="sticky top-0 z-50 w-full border-b border-white/10 bg-[#06123D]/80 backdrop-blur-xl" data-purpose="site-navigation">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+<!-- Brand Logo -->
+<a aria-label="SHIFT 1.0 Home" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-accent rounded-lg py-1 px-2" href="../itconf_exploring_the_future/code.html">
+<!-- Glowing Cyan/Blue Orb -->
+<div class="relative w-7 h-7 flex items-center justify-center">
+<div class="absolute inset-0 rounded-full bg-cyan-400 blur-sm opacity-70 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative w-5 h-5 rounded-full bg-gradient-to-tr from-blue-600 via-cyan-300 to-white shadow-inner shadow-white/40 border border-cyan-200/50"></div>
+</div>
+<span class="text-2xl font-black tracking-wider text-white font-display group-hover:text-cyan-300 transition-colors">SHIFT</span>
+</a>
+<!-- Desktop Nav Links (Explicitly strictly HOME, EVENTS, CONTACTS) -->
+<nav aria-label="Main Navigation" class="hidden md:flex items-center space-x-10">
+<a class="text-sm font-bold tracking-widest text-white/90 hover:text-cyan-300 uppercase transition-colors" href="../itconf_exploring_the_future/code.html">HOME</a>
+<a class="text-sm font-bold tracking-widest text-white/70 hover:text-cyan-300 uppercase transition-colors" href="../shift_1.0_attendee_registration/code.html">Register</a>
+<a class="text-sm font-bold tracking-widest text-white/70 hover:text-cyan-300 uppercase transition-colors" href="../shift_1.0_contact_us/code.html">CONTACTS</a>
+</nav>
+<!-- Right Action Button -->
+<div class="flex items-center gap-4">
+<a class="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-xs font-extrabold tracking-wider uppercase text-white bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-600/30 border border-blue-400/40 transition-all hover:scale-105 active:scale-95" href="../shift_1.0_attendee_registration/code.html">
+<span class="">register</span>
+</a>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: HeroSection -->
+<main class="flex-grow"><div class="flex flex-col w-full relative overflow-hidden font-sans text-slate-100">
+<!-- Ambient Radiant Orbs & Grid Mesh Background -->
+<div aria-hidden="true" class="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
+<div class="absolute -top-40 -left-40 w-[650px] h-[650px] rounded-full bg-blue-600/20 blur-[130px] animate-pulse"></div>
+<div class="absolute top-1/3 -right-48 w-[720px] h-[720px] rounded-full bg-cyan-500/15 blur-[150px]"></div>
+<div class="absolute -bottom-32 left-1/4 w-[600px] h-[600px] rounded-full bg-blue-700/25 blur-[140px]"></div>
+<!-- Fine Circuit/Grid Texture -->
+<div class="absolute inset-0 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:32px_32px] opacity-[0.06]"></div>
+</div>
+<!-- Primary Page Container -->
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+<!-- Top Eyebrow & Master Title -->
+<div class="flex flex-col items-center text-center max-w-4xl mx-auto mb-12 lg:mb-16">
+<!-- Pulsing Eyebrow Pill -->
+<div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.06] border border-cyan-400/30 backdrop-blur-md shadow-[0_0_20px_rgba(56,189,248,0.2)] mb-6 transition-transform hover:scale-105">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-400"></span>
+</span>
+<span class="text-xs sm:text-xs font-bold tracking-widest uppercase text-cyan-300 font-mono">
+          SHIFT 1.0 ATTENDEE REGISTRATION • NOV 28, 2026 • UENR CAMPUS
+        </span>
+</div>
+<!-- Main Headline -->
+<h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.1] mb-6">
+        Secure Your Seat for <span class="bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-300 bg-clip-text text-transparent drop-shadow-sm">SHIFT 1.0</span>
+</h1>
+<!-- Subtitle -->
+<p class="text-base sm:text-lg lg:text-xl text-slate-300/90 leading-relaxed max-w-2xl font-normal">
+        Join mentors, student leaders, and kingdom professionals as we explore career, faith, and purposeful leadership. Free registration courtesy of <span class="text-white font-semibold">WES</span> &amp; <span class="text-cyan-300 font-semibold">UENR SCC</span>.
+      </p>
+</div>
+<!-- Main Content Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+<!-- LEFT COLUMN: Event Perks, Date/Time & Capacity Tracker -->
+<div class="lg:col-span-5 flex flex-col space-y-6">
+<!-- Live Capacity Card -->
+<div class="rounded-2xl p-6 sm:p-7 bg-white/[0.04] backdrop-blur-xl border border-white/10 shadow-2xl relative overflow-hidden group hover:border-cyan-400/40 transition-all duration-300">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold uppercase tracking-wider text-cyan-300 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">confirmation_number</span>
+              Seat Availability
+            </span>
+<span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+              68% Full
+            </span>
+</div>
+<p class="text-xl font-extrabold text-white mb-1">
+            340 / 500 Attendees Confirmed
+          </p>
+<p class="text-xs text-slate-400 mb-4">
+            Auditorium seating is allocated on a first-come, first-verified basis.
+          </p>
+<!-- Capacity Bar -->
+<div class="w-full h-3 rounded-full bg-slate-900/80 p-0.5 border border-white/10 overflow-hidden relative">
+<div class="h-full rounded-full bg-gradient-to-r from-blue-500 via-cyan-400 to-emerald-400 w-[68%] transition-all duration-1000 shadow-[0_0_12px_rgba(56,189,248,0.7)]" id="capacity-bar"></div>
+</div>
+<div class="mt-2.5 flex justify-between text-[11px] font-mono text-slate-400">
+<span>Early Access: Closed</span>
+<span class="text-cyan-300 font-semibold">160 seats remaining</span>
+</div>
+</div>
+<!-- Venue & Time Brief Card -->
+<div class="rounded-2xl p-6 sm:p-7 bg-white/[0.04] backdrop-blur-xl border border-white/10 shadow-2xl space-y-5">
+<h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 flex items-center gap-2">
+<span class="material-symbols-outlined text-cyan-400 text-lg">calendar_month</span>
+            Gathering Schedule &amp; Location
+          </h2>
+<div class="space-y-4">
+<!-- Date/Time Item -->
+<div class="flex items-start gap-4 group">
+<div class="w-11 h-11 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center shrink-0 text-cyan-300 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">schedule</span>
+</div>
+<div>
+<p class="text-xs font-semibold text-slate-400 uppercase tracking-wide">Date &amp; Time</p>
+<p class="text-base font-bold text-white">Saturday, Nov 28, 2026</p>
+<p class="text-sm text-cyan-300 font-medium">2:00 PM GMT • Doors open at 1:15 PM</p>
+</div>
+</div>
+<!-- Venue Item -->
+<div class="flex items-start gap-4 group">
+<div class="w-11 h-11 rounded-xl bg-cyan-600/20 border border-cyan-500/30 flex items-center justify-center shrink-0 text-cyan-300 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">location_on</span>
+</div>
+<div>
+<p class="text-xs font-semibold text-slate-400 uppercase tracking-wide">Venue Location</p>
+<p class="text-base font-bold text-white">UENR Main Auditorium</p>
+<p class="text-sm text-slate-300">University of Energy and Natural Resources, Sunyani</p>
+</div>
+</div>
+</div>
+</div>
+<!-- What's Included & Value Proposition -->
+<div class="rounded-2xl p-6 sm:p-7 bg-gradient-to-br from-white/[0.05] to-blue-900/[0.15] backdrop-blur-xl border border-white/10 shadow-2xl space-y-4">
+<p class="text-xs font-bold uppercase tracking-widest text-slate-400">Everything Included Free</p>
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/5 border border-white/10 text-slate-200 hover:border-cyan-400/40 transition-colors">
+<span class="material-symbols-outlined text-sm text-cyan-400">workspace_premium</span>
+              Keynote Mentorship
+            </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/5 border border-white/10 text-slate-200 hover:border-cyan-400/40 transition-colors">
+<span class="material-symbols-outlined text-sm text-cyan-400">groups</span>
+              Interactive Breakouts
+            </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/5 border border-white/10 text-slate-200 hover:border-cyan-400/40 transition-colors">
+<span class="material-symbols-outlined text-sm text-cyan-400">forum</span>
+              Networking Mixer
+            </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/5 border border-white/10 text-slate-200 hover:border-cyan-400/40 transition-colors">
+<span class="material-symbols-outlined text-sm text-cyan-400">verified</span>
+              Certificate of Attendance
+            </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/5 border border-white/10 text-slate-200 hover:border-cyan-400/40 transition-colors">
+<span class="material-symbols-outlined text-sm text-cyan-400">menu_book</span>
+              Career Toolkit PDFs
+            </span>
+</div>
+<!-- Motivational Quote Capsule -->
+<div class="pt-3 border-t border-white/10">
+<p class="text-xs italic text-slate-300 border-l-2 border-cyan-400 pl-3">
+              “Equipping university scholars to anchor their careers in excellence and kingdom purpose beyond the classroom.”
+            </p>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Registration Interactive Form -->
+<div class="lg:col-span-7">
+<div class="rounded-3xl p-7 sm:p-10 bg-white/[0.05] backdrop-blur-2xl border border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.4)] relative">
+<!-- Accent Glow Header Pin -->
+<div class="flex items-center justify-between pb-6 mb-6 border-b border-white/10">
+<div>
+<h2 class="text-2xl font-black text-white tracking-tight flex items-center gap-2">
+<span>Attendee Registration</span>
+<span class="material-symbols-outlined text-cyan-400">how_to_reg</span>
+</h2>
+<p class="text-xs sm:text-sm text-slate-300 mt-1">
+                Takes less than 60 seconds. Instant SMS seat pass issued upon submit.
+              </p>
+</div>
+<div class="hidden sm:flex flex-col items-end">
+<span class="text-[10px] font-mono tracking-widest uppercase text-cyan-300 bg-cyan-950/60 border border-cyan-500/30 px-3 py-1 rounded-full">
+                Step 1 of 1
+              </span>
+</div>
+</div>
+<form class="space-y-6" id="registration-form" onsubmit="event.preventDefault(); handleRegistrationSubmit();">
+<!-- Full Name Field -->
+<div class="space-y-2">
+<label class="block text-xs font-bold uppercase tracking-wider text-slate-200" for="full_name">
+                Full Name <span class="text-cyan-400">*</span>
+</label>
+<div class="relative rounded-xl overflow-hidden shadow-inner group">
+<span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-cyan-400 transition-colors">
+<span class="material-symbols-outlined text-lg">person</span>
+</span>
+<input class="w-full pl-11 pr-4 py-3 bg-slate-900/70 border border-white/15 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 text-sm transition-all" id="full_name" name="full_name" placeholder="e.g. Samuel Kwadwo Mensah" required="" type="text"/>
+</div>
+</div>
+<!-- Phone Number Field with Ghana +233 prefix -->
+<div class="space-y-2">
+<label class="block text-xs font-bold uppercase tracking-wider text-slate-200" for="phone">
+                WhatsApp / Phone Number <span class="text-cyan-400">*</span>
+</label>
+<div class="flex gap-2">
+<div class="flex items-center gap-1.5 px-3 bg-slate-900/80 border border-white/15 rounded-xl text-xs font-mono font-semibold text-cyan-300 shrink-0 select-none">
+<span>🇬🇭</span>
+<span>+233</span>
+</div>
+<div class="relative w-full rounded-xl overflow-hidden shadow-inner group">
+<span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-cyan-400 transition-colors">
+<span class="material-symbols-outlined text-lg">phone_android</span>
+</span>
+<input class="w-full pl-11 pr-4 py-3 bg-slate-900/70 border border-white/15 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 text-sm transition-all" id="phone" name="phone" placeholder="e.g. 024 123 4567 or 50 123 4567" required="" type="tel"/>
+</div>
+</div>
+<p class="text-[11px] text-slate-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-cyan-400">info</span>
+                Used to dispatch your fast-track auditorium entrance code.
+              </p>
+</div>
+<!-- Email Address Field (Optional) -->
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<label class="block text-xs font-bold uppercase tracking-wider text-slate-200" for="email">
+                  Email Address
+                </label>
+<span class="text-[11px] text-slate-400 font-medium">(Optional for PDF toolkit)</span>
+</div>
+<div class="relative rounded-xl overflow-hidden shadow-inner group">
+<span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-cyan-400 transition-colors">
+<span class="material-symbols-outlined text-lg">mail</span>
+</span>
+<input class="w-full pl-11 pr-4 py-3 bg-slate-900/70 border border-white/15 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 text-sm transition-all" id="email" name="email" placeholder="e.g. samuel.mensah@st.uenr.edu.gh" type="email"/>
+</div>
+</div>
+<!-- Student / Academic Level Selector (Segmented Cards) -->
+<div class="space-y-2.5">
+<label class="block text-xs font-bold uppercase tracking-wider text-slate-200">
+                Current Level / Academic Standing <span class="text-cyan-400">*</span>
+</label>
+<!-- Level selection chips -->
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5" id="level-selector-group">
+<button class="level-chip text-left px-3.5 py-3 rounded-xl border border-white/15 bg-white/[0.03] hover:bg-white/[0.08] hover:border-cyan-400/40 transition-all focus:outline-none" data-level="100" onclick="selectAcademicLevel(this)" type="button">
+<p class="text-xs font-bold text-white">Level 100</p>
+<p class="text-[11px] text-slate-400">Freshman</p>
+</button>
+<button class="level-chip text-left px-3.5 py-3 rounded-xl border border-white/15 bg-white/[0.03] hover:bg-white/[0.08] hover:border-cyan-400/40 transition-all focus:outline-none" data-level="200" onclick="selectAcademicLevel(this)" type="button">
+<p class="text-xs font-bold text-white">Level 200</p>
+<p class="text-[11px] text-slate-400">Sophomore</p>
+</button>
+<button class="level-chip text-left px-3.5 py-3 rounded-xl border border-cyan-400/60 bg-blue-600/25 ring-2 ring-cyan-400/30 transition-all focus:outline-none" data-level="300" onclick="selectAcademicLevel(this)" type="button">
+<p class="text-xs font-bold text-cyan-200">Level 300</p>
+<p class="text-[11px] text-slate-300">Penultimate</p>
+</button>
+<button class="level-chip text-left px-3.5 py-3 rounded-xl border border-white/15 bg-white/[0.03] hover:bg-white/[0.08] hover:border-cyan-400/40 transition-all focus:outline-none" data-level="400" onclick="selectAcademicLevel(this)" type="button">
+<p class="text-xs font-bold text-white">Level 400</p>
+<p class="text-[11px] text-slate-400">Final Year</p>
+</button>
+<button class="level-chip text-left px-3.5 py-3 rounded-xl border border-white/15 bg-white/[0.03] hover:bg-white/[0.08] hover:border-cyan-400/40 transition-all focus:outline-none col-span-2 sm:col-span-2" data-level="postgrad" onclick="selectAcademicLevel(this)" type="button">
+<p class="text-xs font-bold text-white">Postgrad / Alumni / Professional</p>
+<p class="text-[11px] text-slate-400">Masters, PhD or Working Youth</p>
+</button>
+</div>
+<input id="academic_level" name="academic_level" type="hidden" value="300"/>
+</div>
+<!-- Department / Course of Study -->
+<div class="space-y-2">
+<label class="block text-xs font-bold uppercase tracking-wider text-slate-200" for="department">
+                Department / Field of Study
+              </label>
+<div class="relative rounded-xl overflow-hidden shadow-inner group">
+<span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-cyan-400 transition-colors">
+<span class="material-symbols-outlined text-lg">school</span>
+</span>
+<input class="w-full pl-11 pr-4 py-3 bg-slate-900/70 border border-white/15 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 text-sm transition-all" id="department" name="department" placeholder="e.g. Computer Science, Renewable Energy, Nursing..." type="text"/>
+</div>
+</div>
+<!-- Submit Button -->
+<div class="pt-2">
+<button class="w-full py-4 px-6 rounded-2xl font-black text-sm tracking-wide uppercase text-white bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-500 hover:via-indigo-500 hover:to-cyan-400 shadow-[0_0_30px_rgba(37,99,235,0.45)] hover:shadow-[0_0_40px_rgba(56,189,248,0.6)] border border-cyan-300/40 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-3 group" id="submit-btn" type="submit">
+<span>Complete Registration</span>
+<span class="material-symbols-outlined text-xl group-hover:translate-x-1.5 transition-transform duration-200">arrow_forward</span>
+</button>
+</div>
+<!-- Trust / Reassurance Subtext -->
+<div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-400">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-cyan-400 text-sm">verified_user</span>
+                100% Free Admission • No Hidden Fees
+              </span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span>
+                Instant Digital Pass Sent via SMS
+              </span>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<!-- Registration Success Modal Overlay (Hidden by Default) -->
+<div class="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300" id="success-modal">
+<div class="bg-[#051138] border border-cyan-400/50 rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-[0_0_50px_rgba(56,189,248,0.4)] text-center relative overflow-hidden transform scale-95 transition-transform duration-300" id="success-modal-content">
+<!-- Top Decorative Beam -->
+<div class="absolute -top-20 left-1/2 -translate-x-1/2 w-48 h-48 bg-cyan-400/30 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Icon -->
+<div class="w-16 h-16 rounded-2xl bg-cyan-500/20 border border-cyan-400/40 flex items-center justify-center mx-auto mb-5 text-cyan-300 shadow-[0_0_20px_rgba(56,189,248,0.3)]">
+<span class="material-symbols-outlined text-4xl">celebration</span>
+</div>
+<h3 class="text-2xl font-black text-white tracking-tight mb-2">Seat Confirmed!</h3>
+<p class="text-sm text-slate-300 mb-6">
+        Welcome to SHIFT 1.0, <span class="text-cyan-300 font-bold" id="confirmed-name">Attendee</span>! Your pass for Saturday, Nov 28 at UENR Sunyani is officially locked in.
+      </p>
+<!-- Pass Ticket Box -->
+<div class="p-4 rounded-xl bg-slate-900/90 border border-white/10 text-left space-y-2 mb-6 font-mono text-xs">
+<div class="flex justify-between text-slate-400">
+<span>EVENT:</span>
+<span class="text-white font-sans font-bold">SHIFT 1.0 (UENR)</span>
+</div>
+<div class="flex justify-between text-slate-400">
+<span>PASS ID:</span>
+<span class="text-cyan-400 font-bold" id="badge-code">SHFT-8942-UENR</span>
+</div>
+<div class="flex justify-between text-slate-400">
+<span>TIME:</span>
+<span class="text-slate-200">2:00 PM GMT</span>
+</div>
+</div>
+<!-- Close Modal CTA -->
+<button class="w-full py-3.5 px-6 rounded-xl font-bold text-xs uppercase tracking-wider text-slate-900 bg-cyan-300 hover:bg-cyan-200 transition-all shadow-lg shadow-cyan-400/25" onclick="closeConfirmationModal()" type="button">
+        Done &amp; Download Pass
+      </button>
+</div>
+</div>
+<!-- Interactive Logic -->
+<script>
+    // Handle Interactive Academic Level selection
+    function selectAcademicLevel(buttonElement) {
+      const allChips = document.querySelectorAll('.level-chip');
+      allChips.forEach(chip => {
+        chip.className = 'level-chip text-left px-3.5 py-3 rounded-xl border border-white/15 bg-white/[0.03] hover:bg-white/[0.08] hover:border-cyan-400/40 transition-all focus:outline-none';
+        const title = chip.querySelector('p:first-child');
+        const sub = chip.querySelector('p:last-child');
+        if (title) title.className = 'text-xs font-bold text-white';
+        if (sub) sub.className = 'text-[11px] text-slate-400';
+      });
+
+      // Highlight active
+      buttonElement.className = 'level-chip text-left px-3.5 py-3 rounded-xl border border-cyan-400/60 bg-blue-600/25 ring-2 ring-cyan-400/30 transition-all focus:outline-none';
+      const selectedTitle = buttonElement.querySelector('p:first-child');
+      const selectedSub = buttonElement.querySelector('p:last-child');
+      if (selectedTitle) selectedTitle.className = 'text-xs font-bold text-cyan-200';
+      if (selectedSub) selectedSub.className = 'text-[11px] text-slate-300';
+
+      const selectedValue = buttonElement.getAttribute('data-level');
+      document.getElementById('academic_level').value = selectedValue;
+    }
+
+    // Handle Form Submit Micro-interaction
+    function handleRegistrationSubmit() {
+      const fullNameInput = document.getElementById('full_name');
+      const phoneInput = document.getElementById('phone');
+
+      if (!fullNameInput.value.trim() || !phoneInput.value.trim()) {
+        alert('Please fill out all required fields.');
+        return;
+      }
+
+      const submitBtn = document.getElementById('submit-btn');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <span class="inline-block animate-spin material-symbols-outlined text-lg">progress_activity</span>
+        <span>Securing Pass...</span>
+      `;
+
+      setTimeout(() => {
+        // Generate random Ticket ID
+        const randomPassNum = Math.floor(1000 + Math.random() * 9000);
+        document.getElementById('badge-code').textContent = `SHFT-${randomPassNum}-UENR`;
+        document.getElementById('confirmed-name').textContent = fullNameInput.value.trim();
+
+        // Reveal modal
+        const modal = document.getElementById('success-modal');
+        const modalContent = document.getElementById('success-modal-content');
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modalContent.classList.remove('scale-95');
+        modalContent.classList.add('scale-100');
+
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `
+          <span>Complete Registration</span>
+          <span class="material-symbols-outlined text-xl group-hover:translate-x-1.5 transition-transform duration-200">arrow_forward</span>
+        `;
+      }, 700);
+    }
+
+    function closeConfirmationModal() {
+      const modal = document.getElementById('success-modal');
+      const modalContent = document.getElementById('success-modal-content');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modalContent.classList.remove('scale-100');
+      modalContent.classList.add('scale-95');
+      document.getElementById('registration-form').reset();
+    }
+  </script>
+</div></main>
+<!-- BEGIN: SiteFooter -->
+<footer class="w-full bg-[#03091e] border-t border-white/10 py-14" data-purpose="footer" id="contacts">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col items-center justify-center space-y-8 text-center">
+<!-- Brand & Navigation in Footer (Strictly HOME, EVENTS, CONTACTS) -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-14">
+<a class="text-sm font-bold tracking-widest text-white hover:text-cyan-300 uppercase transition-colors" href="../itconf_exploring_the_future/code.html">HOME</a>
+<a class="text-sm font-bold tracking-widest text-white hover:text-cyan-300 uppercase transition-colors" href="../shift_1.0_attendee_registration/code.html">Register</a>
+<a class="text-sm font-bold tracking-widest text-white hover:text-cyan-300 uppercase transition-colors" href="../shift_1.0_contact_us/code.html">CONTACTS</a>
+</div>
+<!-- Divider -->
+<div class="w-24 h-px bg-white/20"></div>
+<!-- Copyright Notice -->
+<p class="text-xs sm:text-sm font-medium tracking-wide text-white/60 max-w-xl">
+        © 2026 Worldwide Evangelism Service (WES) x UENR SCC. All rights reserved.
+      </p>
+</div>
+</footer>
+<!-- END: SiteFooter -->
+</body></html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SHIFT 1.0 - Beyond The Degree | UENR</title>
+<!-- Tailwind CSS CDN with Forms & Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#050D2A',
+              dark: '#08164D',
+              deep: '#0B2475',
+              blue: '#0E3EDA',
+              electric: '#1A56FF',
+              accent: '#38BDF8',
+              glow: '#60A5FA',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          },
+          backgroundImage: {
+            'hero-radial': 'radial-gradient(circle at 50% 20%, rgba(26, 86, 255, 0.45) 0%, rgba(11, 36, 117, 0.95) 60%, rgba(5, 13, 42, 0.99) 100%)',
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles: Marquee, Effects & Scrollbars -->
+<style data-purpose="custom-animations">
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee-infinite {
+      display: flex;
+      width: 200%;
+      animation: marquee 22s linear infinite;
+    }
+    .animate-marquee-infinite:hover {
+      animation-play-state: paused;
+    }
+  </style>
+<style data-purpose="glass-and-glow">
+    .glass-pill {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    .speaker-card-overlay {
+      background: linear-gradient(180deg, rgba(8, 22, 77, 0.05) 30%, rgba(5, 13, 42, 0.85) 75%, rgba(5, 13, 42, 0.98) 100%);
+    }
+    .text-glow {
+      text-shadow: 0 0 35px rgba(56, 189, 248, 0.45);
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-[#06123D] text-white font-sans antialiased selection:bg-brand-accent selection:text-brand-navy min-h-screen flex flex-col">
+<!-- BEGIN: MainHeader -->
+<header class="sticky top-0 z-50 w-full border-b border-white/10 bg-[#06123D]/80 backdrop-blur-xl" data-purpose="site-navigation">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+<!-- Brand Logo -->
+<a aria-label="SHIFT 1.0 Home" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-accent rounded-lg py-1 px-2" href="../itconf_exploring_the_future/code.html">
+<!-- Glowing Cyan/Blue Orb -->
+<div class="relative w-7 h-7 flex items-center justify-center">
+<div class="absolute inset-0 rounded-full bg-cyan-400 blur-sm opacity-70 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative w-5 h-5 rounded-full bg-gradient-to-tr from-blue-600 via-cyan-300 to-white shadow-inner shadow-white/40 border border-cyan-200/50"></div>
+</div>
+<span class="text-2xl font-black tracking-wider text-white font-display group-hover:text-cyan-300 transition-colors">SHIFT</span>
+</a>
+<!-- Desktop Nav Links (Explicitly strictly HOME, EVENTS, CONTACTS) -->
+<nav aria-label="Main Navigation" class="hidden md:flex items-center space-x-10">
+<a class="text-sm font-bold tracking-widest text-white/90 hover:text-cyan-300 uppercase transition-colors" href="../itconf_exploring_the_future/code.html">HOME</a>
+<a class="text-sm font-bold tracking-widest text-white/70 hover:text-cyan-300 uppercase transition-colors" href="../shift_1.0_attendee_registration/code.html">Register</a>
+<a class="text-sm font-bold tracking-widest text-white/70 hover:text-cyan-300 uppercase transition-colors" href="../shift_1.0_contact_us/code.html">CONTACTS</a>
+</nav>
+<!-- Right Action Button -->
+<div class="flex items-center gap-4">
+<a class="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-xs font-extrabold tracking-wider uppercase text-white bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-600/30 border border-blue-400/40 transition-all hover:scale-105 active:scale-95" href="../shift_1.0_attendee_registration/code.html">
+<span class="">register</span>
+</a>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: HeroSection -->
+<main class="flex-grow">
+<section class="relative pt-12 pb-24 lg:pt-16 lg:pb-32 overflow-hidden" data-purpose="hero-banner" id="home">
+<!-- Background Ambient Elements & Real Photo Texture Overlay -->
+<div class="absolute inset-0 pointer-events-none -z-10">
+<!-- Background photo from reference with deep blue gradient filter -->
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&amp;fit=crop&amp;w=2000&amp;q=80')] bg-cover bg-center opacity-60 filter contrast-125"></div>
+<div class="absolute inset-0 bg-hero-radial"></div>
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-blue-500/25 blur-[120px] rounded-full"></div>
+</div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+<!-- Top Meta Tags Bar -->
+<div class="flex flex-wrap items-center justify-between gap-6 pb-12 border-b border-white/10" data-purpose="event-metadata">
+<div class="space-y-1">
+<h2 class="text-xl sm:text-2xl font-extrabold tracking-tight text-white font-display">NOV 28, 2026</h2>
+<p class="text-sm font-semibold tracking-wider text-cyan-300 uppercase">9:00 AM – 2:00 PM</p>
+</div>
+<div class="space-y-1 text-left sm:text-right">
+<h2 class="text-xl sm:text-2xl font-extrabold tracking-tight text-white font-display">UENR</h2>
+<p class="text-sm font-semibold tracking-wider text-white/70 uppercase">SUNYANI / CAMPUS</p>
+</div>
+</div>
+<!-- Giant Typography Title -->
+<div class="py-12 lg:py-16 text-center lg:text-left">
+<h1 class="text-7xl sm:text-8xl md:text-9xl lg:text-[148px] font-black tracking-tight leading-none text-white font-display uppercase select-none text-glow">
+            SHIFT 1.0
+          </h1>
+</div>
+<!-- Hero Content Grid: Left Pills & Narrative, Right Action -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+<!-- Left Column (Speaker Avatar Pill & Key Text) -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Skilled Speakers Pill -->
+<div class="inline-flex items-center gap-4 px-5 py-3 rounded-full glass-pill hover:bg-white/15 transition-all cursor-pointer group" data-purpose="speakers-badge">
+<!-- Overlapping Avatars -->
+<div class="flex -space-x-2.5 overflow-hidden">
+<img alt="Speaker silhouette" class="inline-block h-9 w-9 rounded-full ring-2 ring-blue-600 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUUmTPKk-QV_iVTN9a1KNRl6sqQMlNeyqblS0bGnXznrExuPHOJtgdPulk0ger_NV2ilgl-MK00Sip6zYhzRBuT625SKpHtpt6ADqfKM0SmEtBGBcdIsm4bL1mclTgrCIYSFtfwkVROUqkKlTwnCOgIMAZnfYfIa79vyvUjL2pQyqLSeGUb86N5LamG3d2QOPSGdY3pbs1Zp7Px2-yhn6mwvGw1OsPt_YkmLw66TL5fWuTU0o5u88PzA">
+<img alt="Speaker portrait" class="inline-block h-9 w-9 rounded-full ring-2 ring-blue-600 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOp1F3hbFxgJ4UlEfCkoaZ0DY9Bpi9IKc42WcwtLMmIuj0ZKIXm6BB6b9EPAwJSf03Ri7dMVPi4wvdawS6qAeMlf0CmA_WSMqpiA3W-dIly7JWrCAqC7DXUZ6sWCfE5svEOcE2QqZvDSibZU2fiS5b_6IlBjCTBy8nZGMpJcK6m1I5zVsm3PR7NQX96nHTOafWqyw6fXq35VAlkeAaErkbZ1vaY5CAkm81J6tP8Y0wfNAQnc1X456D_w">
+<img alt="Speaker thumbnail" class="inline-block h-9 w-9 rounded-full ring-2 ring-blue-600 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBI4dlmiNWNMrBQd63HlHQdwkPBCtk2ruu4ewRNGQ5a3ubSb3Hb5QeLN6MgAH9mn1_cmeZz3NwPTuNsgs8p5lTwAfgRI3lR8OyU83hDXxuqosdhR9PYsyKimPUF0NE5_SwDf_9mvovbEWvj_OCg1_VJ6k-Wnjs481maheEtH5khkcURTBDpAojOZiCcikomrHrAYQAWG2cwvxUiPLeBffUWS8YpqnePlU2XZIigGcFfwXbg8sbSTRxzg">
+</div>
+<span class="text-xs sm:text-sm font-bold tracking-wider uppercase text-white flex items-center gap-1.5 group-hover:text-cyan-300">
+                SKILLED SPEAKERS 
+                <span class="inline-block transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+</span>
+</div>
+<!-- Main Theme Title -->
+<div class="space-y-4 max-w-2xl">
+<h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase leading-snug tracking-normal text-white">
+                BEYOND THE DEGREE:<br class="hidden sm:inline"> BUILDING YOUR CAREER, PURPOSE &amp; LEGACY
+              </h2>
+<p class="text-base sm:text-lg text-white/80 leading-relaxed font-normal">
+                Worldwide Evangelism Service (WES), in partnership with the UENR Student Christian Council (SCC), presents SHIFT 1.0. Helping students and young adults connect their faith with career growth, personal purpose, and long-term impact.
+              </p>
+</div>
+</div>
+<!-- Right Column (Register CTA & Credits) -->
+<div class="lg:col-span-4 flex flex-col justify-end space-y-8" id="register">
+<!-- Register Button -->
+<div class="w-full">
+              <a class="w-full py-5 px-8 rounded-2xl glass-pill bg-white/10 hover:bg-white text-white hover:text-brand-navy border-2 border-white/30 hover:border-white shadow-2xl shadow-blue-500/20 font-black tracking-widest text-center flex items-center justify-center gap-3 text-base sm:text-lg uppercase transition-all duration-300 hover:scale-[1.02]" href="../shift_1.0_attendee_registration/code.html">
+<span class="text-xl">↗</span> REGISTER NOW
+              </a>
+</div>
+<!-- Meta credits lines -->
+<div class="flex flex-col sm:flex-row lg:flex-col justify-between text-xs tracking-widest uppercase text-white/70 font-semibold gap-2 border-t border-white/10 pt-4">
+<span class="">WES &amp; UENR SCC</span>
+<span class="text-white/90">GEN. SEC. JUSTICE KELVIN LARNYOH</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: MarqueeBanner -->
+<div class="w-full bg-[#040C29] py-5 border-y border-white/15 overflow-hidden select-none" data-purpose="marquee-divider">
+<div class="animate-marquee-infinite items-center gap-8 text-white font-display text-3xl sm:text-4xl lg:text-5xl font-black tracking-widest uppercase whitespace-nowrap">
+<!-- Stream Block 1 -->
+<span class="flex items-center gap-8">
+<span class="">SPEAKERS</span>
+<!-- Glowing Starburst SVG -->
+<svg class="w-8 h-8 text-cyan-300 filter drop-shadow-[0_0_8px_rgba(56,189,248,0.8)] fill-current" viewBox="0 0 24 24">
+<path d="M12 0L14 9L22 7L16 13L24 18L15 17L12 24L9 17L0 18L8 13L2 7L10 9L12 0Z"></path>
+</svg>
+<span class="">SPEAKERS</span>
+<svg class="w-8 h-8 text-cyan-300 filter drop-shadow-[0_0_8px_rgba(56,189,248,0.8)] fill-current" viewBox="0 0 24 24">
+<path d="M12 0L14 9L22 7L16 13L24 18L15 17L12 24L9 17L0 18L8 13L2 7L10 9L12 0Z"></path>
+</svg>
+<span class="">SPEAKERS</span>
+<svg class="w-8 h-8 text-cyan-300 filter drop-shadow-[0_0_8px_rgba(56,189,248,0.8)] fill-current" viewBox="0 0 24 24">
+<path d="M12 0L14 9L22 7L16 13L24 18L15 17L12 24L9 17L0 18L8 13L2 7L10 9L12 0Z"></path>
+</svg>
+<span class="">SPEAKERS</span>
+<svg class="w-8 h-8 text-cyan-300 filter drop-shadow-[0_0_8px_rgba(56,189,248,0.8)] fill-current" viewBox="0 0 24 24">
+<path d="M12 0L14 9L22 7L16 13L24 18L15 17L12 24L9 17L0 18L8 13L2 7L10 9L12 0Z"></path>
+</svg>
+</span>
+<!-- Stream Block 2 (Duplicate for Seamless Loop) -->
+<span class="flex items-center gap-8">
+<span class="">SPEAKERS</span>
+<svg class="w-8 h-8 text-cyan-300 filter drop-shadow-[0_0_8px_rgba(56,189,248,0.8)] fill-current" viewBox="0 0 24 24">
+<path d="M12 0L14 9L22 7L16 13L24 18L15 17L12 24L9 17L0 18L8 13L2 7L10 9L12 0Z"></path>
+</svg>
+<span class="">SPEAKERS</span>
+<svg class="w-8 h-8 text-cyan-300 filter drop-shadow-[0_0_8px_rgba(56,189,248,0.8)] fill-current" viewBox="0 0 24 24">
+<path d="M12 0L14 9L22 7L16 13L24 18L15 17L12 24L9 17L0 18L8 13L2 7L10 9L12 0Z"></path>
+</svg>
+<span class="">SPEAKERS</span>
+<svg class="w-8 h-8 text-cyan-300 filter drop-shadow-[0_0_8px_rgba(56,189,248,0.8)] fill-current" viewBox="0 0 24 24">
+<path d="M12 0L14 9L22 7L16 13L24 18L15 17L12 24L9 17L0 18L8 13L2 7L10 9L12 0Z"></path>
+</svg>
+<span class="">SPEAKERS</span>
+<svg class="w-8 h-8 text-cyan-300 filter drop-shadow-[0_0_8px_rgba(56,189,248,0.8)] fill-current" viewBox="0 0 24 24">
+<path d="M12 0L14 9L22 7L16 13L24 18L15 17L12 24L9 17L0 18L8 13L2 7L10 9L12 0Z"></path>
+</svg>
+</span>
+</div>
+</div>
+<!-- END: MarqueeBanner -->
+<!-- BEGIN: SpeakersSection -->
+<section class="py-20 lg:py-28 bg-gradient-to-b from-[#06123D] via-[#081852] to-[#050D2A]" data-purpose="speakers-showcase" id="events">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<!-- Speakers Header -->
+<div class="flex items-center justify-between mb-12">
+<div>
+<span class="text-cyan-400 font-bold tracking-widest text-xs uppercase block mb-1">Keynote Mentors &amp; Leaders</span>
+<h2 class="text-2xl sm:text-3xl font-black tracking-wider uppercase text-white font-display">FEATURED LINEUP</h2>
+</div>
+<a class="inline-flex items-center gap-2 text-sm font-bold tracking-wider text-cyan-300 hover:text-white uppercase transition-colors group" href="../shift_1.0_attendee_registration/code.html">
+<span class="">Continuous Lineup</span>
+<span class="transform group-hover:translate-x-1 transition-transform">→</span>
+</a>
+</div>
+<!-- 5-Card Desktop Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+<!-- Card 1: Matey Black -->
+<div class="group relative rounded-2xl overflow-hidden bg-brand-navy border border-white/10 hover:border-cyan-400/50 shadow-xl transition-all duration-300 hover:-translate-y-2" data-purpose="speaker-card">
+<div class="aspect-[3/4] w-full overflow-hidden">
+<img alt="Matey Black" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPbLsfKSMM5XN68jx3GJPtZsYjJKhafbkZPLjr_3P8eymSNK-TTU1iIlAPwHHA15btwRwNXiJea3E4ymMockUVd-dvrZYSS5d6KoTA0OaIktA7J-pNzV4HHFYHwGb5pNgS2UbOrprb3F72DaxhKL5t56fB_csPf5Ho3kwFYEL8qVoAg168kOYG3qNX09oY0rOni7-iG3oooP3UEBTFiI4f3pEGLpPwbL6TK5EFlNd4PQxqyrLPH5okJA">
+</div>
+<div class="absolute inset-0 speaker-card-overlay flex flex-col justify-end p-5">
+<span class="text-[10px] font-extrabold uppercase tracking-widest text-cyan-400 mb-1">CREATIVE DESIGNER</span>
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-black text-white group-hover:text-cyan-200 transition-colors">Matey Black</h3>
+<span class="text-cyan-400 text-sm opacity-80 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Christian Grant -->
+<div class="group relative rounded-2xl overflow-hidden bg-brand-navy border border-white/10 hover:border-cyan-400/50 shadow-xl transition-all duration-300 hover:-translate-y-2" data-purpose="speaker-card">
+<div class="aspect-[3/4] w-full overflow-hidden">
+<img alt="Christian Grant" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8HWFTie-_K34eF-cTg4UWP0Z6YN-E_TOlIy2ICir9wsKLq5LEo6hAq3OsdhjqX9k_qO5OBavxBR7_G5WC0USU2rtRoKMHafYiW-iWRqXPzFUxsWgACjXhznQghNh0VVask-cvvyCM_qBGPAZ3OKNa1NM1egd3rX1cyi7Dvar1IKSqjk42_Gns4croBcjz8EW6I4CT_lkF7Gwst7X_IhFW3xhlPyaSi22cpA-AvX-MIQCM4v-Pey2mVw">
+</div>
+<div class="absolute inset-0 speaker-card-overlay flex flex-col justify-end p-5">
+<span class="text-[10px] font-extrabold uppercase tracking-widest text-cyan-400 mb-1">DESIGN DIRECTOR</span>
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-black text-white group-hover:text-cyan-200 transition-colors">Christian Grant</h3>
+<span class="text-cyan-400 text-sm opacity-80 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Michelle Larson -->
+<div class="group relative rounded-2xl overflow-hidden bg-brand-navy border border-white/10 hover:border-cyan-400/50 shadow-xl transition-all duration-300 hover:-translate-y-2" data-purpose="speaker-card">
+<div class="aspect-[3/4] w-full overflow-hidden">
+<img alt="Michelle Larson" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAv_9L3phekIAJXQBUeIBHeFIpAkx3P2TR56cFlPYlNdTIF8LMW1hUPqz--rFsDXRwC0_bm1NpsG18HpUxVgezdHREtB15FiilVld4kgw0FNJl-NkkR8JKP_p4G-k4b7ExxUxhkD2xcDMSxXtG3oUiPCEUVzIu-4RmktMP65jmRy77l6vKtZ5Tv5KGLVH_xgRuPQyNVteji6CCU-wAnlyAixWPcW0ydWiwuwieWWvG3K5YDnkuS_KkfA">
+</div>
+<div class="absolute inset-0 speaker-card-overlay flex flex-col justify-end p-5">
+<span class="text-[10px] font-extrabold uppercase tracking-widest text-cyan-400 mb-1">SENIOR PRODUCT DESIGNER</span>
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-black text-white group-hover:text-cyan-200 transition-colors">Michelle Larson</h3>
+<span class="text-cyan-400 text-sm opacity-80 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+</div>
+</div>
+</div>
+<!-- Card 4: Mark Petterson -->
+<div class="group relative rounded-2xl overflow-hidden bg-brand-navy border border-white/10 hover:border-cyan-400/50 shadow-xl transition-all duration-300 hover:-translate-y-2" data-purpose="speaker-card">
+<div class="aspect-[3/4] w-full overflow-hidden">
+<img alt="Mark Petterson" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8HUoPAy8wWJH4npdsztpXfY5CM1ln2CCHFUZhYiatc8XZQQNcODyLvRpe6HXk14b29xN3q5EmFUQcl7B87c5pDKIRFz43r5Y_WtxE9FSGAu9BJ4sh6PTluJJ00BE2EeguNpmK2dEJ5bEvaIhtAIy7oRcs2ig0VgaVI6tqfQIpe4sjwqWmBuE71T6q0LnnP7H1XVZ_A0NiDUtjhFTUn6t4JZNzAibbrKupQc5pV4cm1s9_Vu7JOQ-KHQ">
+</div>
+<div class="absolute inset-0 speaker-card-overlay flex flex-col justify-end p-5">
+<span class="text-[10px] font-extrabold uppercase tracking-widest text-cyan-400 mb-1">DESIGN GUILD LEAD</span>
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-black text-white group-hover:text-cyan-200 transition-colors">Mark Petterson</h3>
+<span class="text-cyan-400 text-sm opacity-80 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+</div>
+</div>
+</div>
+<!-- Card 5: Marry Conor -->
+<div class="group relative rounded-2xl overflow-hidden bg-brand-navy border border-white/10 hover:border-cyan-400/50 shadow-xl transition-all duration-300 hover:-translate-y-2" data-purpose="speaker-card">
+<div class="aspect-[3/4] w-full overflow-hidden">
+<img alt="Marry Conor" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp0gjfUyWb5bB7RO07eYLSZqudBXTFjp7YNUYdZs0m-_yG16Qqy0eyvlAWVsX3Ls6NG9LjlDnHkC11MbZNAL48Pf7hJN2LV1ZOTi-ggBogMHPVRld6HtWrv__-ZQ-lOs2FyPj9ByPx_VlEnesHUd3qqu_kFJ97NZ4w3q68u_Nnm_x_FtWLbPM5pO_vRk1Pvfjpq2ht0t7QOvDcocAImQ94tFyO4Qi1o52-xwYVsQqom8bHnOZxSsoyBA">
+</div>
+<div class="absolute inset-0 speaker-card-overlay flex flex-col justify-end p-5">
+<span class="text-[10px] font-extrabold uppercase tracking-widest text-cyan-400 mb-1">SENIOR UI/UX DESIGNER</span>
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-black text-white group-hover:text-cyan-200 transition-colors">Marry Conor</h3>
+<span class="text-cyan-400 text-sm opacity-80 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SpeakersSection -->
+</main>
+<!-- BEGIN: SiteFooter -->
+<footer class="w-full bg-[#03091e] border-t border-white/10 py-14" data-purpose="footer" id="contacts">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col items-center justify-center space-y-8 text-center">
+<!-- Brand & Navigation in Footer (Strictly HOME, EVENTS, CONTACTS) -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-14">
+<a class="text-sm font-bold tracking-widest text-white hover:text-cyan-300 uppercase transition-colors" href="../itconf_exploring_the_future/code.html">HOME</a>
+<a class="text-sm font-bold tracking-widest text-white hover:text-cyan-300 uppercase transition-colors" href="../shift_1.0_attendee_registration/code.html">Register</a>
+<a class="text-sm font-bold tracking-widest text-white hover:text-cyan-300 uppercase transition-colors" href="../shift_1.0_contact_us/code.html">CONTACTS</a>
+</div>
+<!-- Divider -->
+<div class="w-24 h-px bg-white/20"></div>
+<!-- Copyright Notice -->
+<p class="text-xs sm:text-sm font-medium tracking-wide text-white/60 max-w-xl">
+        © 2026 Worldwide Evangelism Service (WES) x UENR SCC. All rights reserved.
+      </p>
+</div>
+</footer>
+<!-- END: SiteFooter -->
+
+
+
+
+</body></html>

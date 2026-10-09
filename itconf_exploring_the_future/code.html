@@ -1,0 +1,274 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>SHIFT 1.0 | Beyond the Degree</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#2563EB',
+              cobalt: '#1D4ED8',
+              vibrant: '#1a56db',
+              dark: '#030712',
+              night: '#0a1128'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          },
+          letterSpacing: {
+            tighter: '-0.04em',
+            tightest: '-0.06em',
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles for Visual Polish & Marquee -->
+<style data-purpose="custom-layout">
+    /* Custom Hide Scrollbar for Horizontal Touch Swiping */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Subtle Animated Glow for Burst Icons */
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.95; transform: scale(1); filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7)); }
+      50% { opacity: 0.75; transform: scale(0.92); filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.3)); }
+    }
+    .star-glow {
+      animation: pulseGlow 3s ease-in-out infinite;
+    }
+
+    /* Infinite Marquee Animation for Conference Vibe */
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeScroll 22s linear infinite;
+    }
+
+    @media (min-width: 1024px) {
+      .desktop-shell {
+        max-width: 1280px;
+        border-radius: 0 0 2rem 2rem;
+      }
+
+      .desktop-hero {
+        padding-top: 2.5rem;
+      }
+
+      .desktop-hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: end;
+        gap: 2rem;
+      }
+
+      .desktop-actions {
+        max-width: 30rem;
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#163a7a] text-white font-sans antialiased overflow-x-hidden selection:bg-white selection:text-blue-700">
+<!-- BEGIN: Desktop App Container -->
+<div class="desktop-shell min-h-screen flex flex-col relative w-full max-w-md mx-auto bg-gradient-to-b from-[#091426] via-[#1a3269] to-[#1f3d7a] shadow-2xl overflow-hidden pb-12 md:max-w-3xl lg:max-w-[1280px] lg:pb-16">
+<!-- BEGIN: Header -->
+<header class="relative z-30 flex items-center justify-between px-5 pt-5 pb-3 border-b border-white/10 backdrop-blur-md bg-black/20" data-purpose="site-header">
+<!-- Brand Logo -->
+<a aria-label="SHIFT Home" class="flex items-center gap-2 group" href="../itconf_exploring_the_future/code.html">
+<span class="w-3 h-3 rounded-full bg-blue-400 shadow-[0_0_10px_#60a5fa] ring-2 ring-white/30"></span>
+<span class="text-xl font-bold tracking-tight text-white font-sans">SHIFT</span>
+</a>
+<!-- Quick Action Icons -->
+<div class="flex items-center gap-3">
+<!-- Search Icon -->
+
+<!-- Bag / Ticket Icon -->
+
+<!-- Menu / Navigation Toggle -->
+<a aria-label="Open Navigation" class="p-2 bg-blue-600 hover:bg-blue-500 rounded-lg text-white shadow-md active:scale-95 transition-all" href="../shift_1.0_contact_us/code.html">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+<path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</a>
+</div>
+</header>
+<!-- END: Header -->
+<!-- BEGIN: Hero Section -->
+<section class="desktop-hero relative pt-6 pb-8 px-5 flex flex-col lg:px-8 xl:px-10" data-purpose="hero-section">
+<div class="absolute inset-0 z-0 h-[420px] overflow-hidden pointer-events-none lg:h-[520px]"><img alt="Conference Attendees Backdrop" class="w-full h-full object-cover object-top filter contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu_qmTLoYfo-NErfcPFQWVeHKfstjuCDoiaDNxn8Ek2R5AQj77aMU5QrFlF0Jzb1to-vupaA-d9yR4TDenGbXn286ZYJk32BpmIV-eRT0Otb1Gr7-DJb3cVS0eT1BIeBQ89CG77orwXrrPD6aUdmukNHgS6nbGY0zvdYIQMltjcovMXnYLxleWasJlv_IdK7gmC0jIiq_oTfK7nzIMuBrRnPWgMTfQAeymLZr2PxzsrdpyRK2yahC_qw"><div class="absolute inset-0 bg-gradient-to-b from-[#0a1128]/80 via-[#173d7c]/80 to-[#1c3f7c]/90 mix-blend-multiply"></div><div class="absolute inset-0 bg-gradient-to-t from-[#1c3f7c] via-transparent to-transparent"></div></div>
+<div class="absolute right-0 top-64 z-20 bg-rose-500/90 text-white p-2 rounded-l-md shadow-lg border-l border-white/20 backdrop-blur-sm cursor-pointer hover:bg-rose-600 transition-colors lg:top-80">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 0 1 0 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 0 1 0-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="desktop-hero-grid relative z-10">
+<div class="space-y-4 lg:space-y-6">
+<div class="grid grid-cols-2 gap-4 mt-2 mb-6 lg:grid-cols-2 lg:mt-4 lg:mb-8">
+<div>
+<span class="block text-xl font-bold tracking-tight text-white leading-tight lg:text-2xl">Saturday, November 28, 2026</span>
+<span class="block text-xs font-medium text-blue-200 tracking-wide uppercase lg:text-sm">9:00 AM – 2:00 PM</span>
+</div>
+<div>
+<span class="block text-xl font-bold tracking-tight text-white leading-tight lg:text-2xl">UENR</span>
+<span class="block text-xs font-medium text-blue-200 tracking-wide uppercase lg:text-sm">University of Energy and Natural Resources (UENR)</span>
+</div>
+</div>
+<div class="relative z-10 my-4 lg:my-6">
+<h1 class="text-[2.9rem] sm:text-[3.25rem] font-black tracking-tighter leading-[0.92] text-white uppercase select-none drop-shadow-sm lg:text-[5rem] lg:leading-[0.86]">SHIFT 1.0</h1>
+</div>
+<div class="relative z-10 mt-6 flex items-center justify-between bg-white/10 border border-white/15 backdrop-blur-md px-3.5 py-2.5 rounded-2xl w-fit gap-4 group lg:mt-8 lg:px-5 lg:py-3">
+<div class="flex items-center -space-x-2.5">
+<img alt="Community leader" class="w-9 h-9 rounded-full border-2 border-[#1e40af] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClNGPFjiiwKbAbBFP1fFeM9a20MVxYJyl5ta1K5tmOylx5dHRzI1-jEPyIhPXhsQ_iQz8o_GDTC-wVghEOUj9j77yrT1K3dLB4A8VuLuBqPk5B46B8CdqJg9-IA1MN82d7pN71Lzrznz82p57lRLaSKCLrCPjPBjsHQkBR4i-8Z5_Oj4yZlxX571rm7hN2abFAUUdF1cKSUgb5XUFtBPXyipYWvV5sUL-j9Gui2d92tUZqFyCKCwHb4w">
+<img alt="Student leader" class="w-9 h-9 rounded-full border-2 border-[#1e40af] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbCRNTXw3pVXcb-qPZKg_E3HnpnyDleHSzDpjRjjt2ndbgI80aOZGwK4MYf6hTc1JBUhm8z2TotqlvpxZRBisXQfngKr432c2CcrRUPvNt_iFXwjUPcb8hGq-vHUa9R6tHP3PcfAIVLebR_qJsj7gLAGWdU2IcZ3QQBHp7pXkMgCELW7xGpyq_8YsKXjzEr2JvqbXNfIMcS7Lqt0FOeXSvZZOHG8vpHfjARdhEqqj_t2Cu1O_uxAHBdA">
+<img alt="Campus leader" class="w-9 h-9 rounded-full border-2 border-[#1e40af] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEdcxZ_QJW1Hs_gvSyskdE-2ieJ1JrS5_k66VZLuLilL_iqgMoLnJ8_u6VXxenWd2N3RSS2lJvGHhw9ttMKcWNUaw4QhhOv3yNrsmgt92M_RvJ5siNRa6bKLyfk57W9T5-xM2KeTAN5vEltrA-JqAe-FQLaAArb6CIiqyb7h9zTOh_O-jLccarL2JcScWrMZp8Z1OdsFtLOOEQ-kgQotq-oLkfSnG18p6OpcR4xiUJYXRYqwllFes2jQ">
+</div>
+<div class="flex items-center gap-1.5 pr-1">
+<span class="text-xs font-semibold uppercase leading-tight text-white tracking-wider">Community<br>Partners</span>
+<svg class="w-4 h-4 text-white transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+</div>
+<div class="relative z-10 mt-6 lg:mt-16 lg:mb-10 lg:pl-6">
+<div class="space-y-3">
+<h2 class="text-base font-extrabold uppercase tracking-tight text-white leading-snug lg:text-2xl lg:leading-tight">BEYOND THE DEGREE:<br>BUILDING YOUR CAREER, PURPOSE &amp; LEGACY</h2>
+<p class="text-xs text-blue-100/90 leading-relaxed font-normal max-w-sm lg:max-w-xl lg:text-sm">Worldwide Evangelism Service (WES), in partnership with the UENR Student Christian Council (SCC), is hosting SHIFT 1.0! Evangelism is at the heart of what we do, but our mission doesn't stop there. We want to see our young people thrive in every area of life; spiritually, professionally, and personally. SHIFT 1.0 is designed to help students and young adults connect their faith with career growth, personal purpose, and long-term impact.</p>
+</div>
+<div class="relative z-10 mt-6 pt-2 flex flex-col gap-5 lg:mt-8 desktop-actions">
+<a class="inline-flex items-center justify-center gap-2 border-2 border-white/90 hover:bg-white hover:text-blue-700 text-white font-semibold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 active:scale-95 text-center shadow-lg w-full sm:w-auto" href="../shift_1.0_attendee_registration/code.html">
+<span class="">↗</span>
+<span class="tracking-wide uppercase text-xs font-bold">REGISTER NOW</span>
+</a>
+<div class="flex flex-wrap items-center justify-between text-[11px] font-mono tracking-wider text-blue-200/90 pt-1"><span class="text-blue-200/90 font-semibold">WES &amp; UENR SCC</span>
+<span class="text-blue-200/90 font-semibold">GEN. SEC. JUSTICE KELVIN LARNYOH</span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Hero Section -->
+<!-- BEGIN: Animated Ticker Strip -->
+<div class="relative z-20 py-3.5 bg-gradient-to-r from-[#183a79] via-[#224a8d] to-[#183a79] border-y border-white/20 overflow-hidden shadow-inner" data-purpose="speaker-ticker">
+<div class="ticker-track flex items-center gap-6 whitespace-nowrap">
+<div class="flex items-center gap-6">
+<span class="text-3xl font-black uppercase tracking-tight text-white drop-shadow">FAITH</span>
+<svg class="w-8 h-8 text-white star-glow flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0L13.8 8.2L20.5 3.5L16.8 11.2L24 12L16.8 12.8L20.5 20.5L13.8 15.8L12 24L10.2 15.8L3.5 20.5L7.2 12.8L0 12L7.2 11.2L3.5 3.5L10.2 8.2L12 0Z"></path></svg>
+<span class="text-3xl font-black uppercase tracking-tight text-white drop-shadow">PURPOSE</span>
+<svg class="w-8 h-8 text-white star-glow flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0L13.8 8.2L20.5 3.5L16.8 11.2L24 12L16.8 12.8L20.5 20.5L13.8 15.8L12 24L10.2 15.8L3.5 20.5L7.2 12.8L0 12L7.2 11.2L3.5 3.5L10.2 8.2L12 0Z"></path></svg>
+<span class="text-3xl font-black uppercase tracking-tight text-white drop-shadow">IMPACT</span>
+</div>
+<div class="flex items-center gap-6">
+<span class="text-3xl font-black uppercase tracking-tight text-white drop-shadow">FAITH</span>
+<svg class="w-8 h-8 text-white star-glow flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0L13.8 8.2L20.5 3.5L16.8 11.2L24 12L16.8 12.8L20.5 20.5L13.8 15.8L12 24L10.2 15.8L3.5 20.5L7.2 12.8L0 12L7.2 11.2L3.5 3.5L10.2 8.2L12 0Z"></path></svg>
+<span class="text-3xl font-black uppercase tracking-tight text-white drop-shadow">PURPOSE</span>
+<svg class="w-8 h-8 text-white star-glow flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0L13.8 8.2L20.5 3.5L16.8 11.2L24 12L16.8 12.8L20.5 20.5L13.8 15.8L12 24L10.2 15.8L3.5 20.5L7.2 12.8L0 12L7.2 11.2L3.5 3.5L10.2 8.2L12 0Z"></path></svg>
+<span class="text-3xl font-black uppercase tracking-tight text-white drop-shadow">IMPACT</span>
+</div>
+</div>
+</div>
+<!-- END: Animated Ticker Strip -->
+<!-- BEGIN: Featured Speakers Section -->
+<section class="relative pt-7 pb-4 px-4 flex flex-col lg:px-8 xl:px-10" data-purpose="speakers-carousel">
+<div class="flex items-center justify-between mb-4 px-1 lg:mb-6">
+<h3 class="text-xs font-bold tracking-widest uppercase text-blue-200 lg:text-sm">Why SHIFT?</h3>
+<span class="text-[11px] font-medium text-white/70 lg:text-sm">Purpose-driven living →</span>
+</div>
+<div class="relative w-full overflow-hidden marquee-mask pt-1 pb-3 lg:pb-6" style="mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);">
+<div class="animate-marquee-speakers flex gap-3.5 lg:gap-6" style="display: flex; width: max-content; animation: 26s linear 0s infinite normal none running marqueeScroll;">
+<article class="flex-shrink-0 w-[185px] bg-blue-900/40 rounded-xl overflow-hidden border border-white/10 flex flex-col group transition-transform active:scale-[0.98] lg:w-[260px]">
+<div class="h-56 w-full relative overflow-hidden bg-slate-800 lg:h-72">
+<div class="w-full h-full flex items-center justify-center text-4xl font-black tracking-tighter text-white bg-gradient-to-br from-blue-500 to-indigo-900 lg:text-6xl">FAITH</div>
+<div class="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-transparent to-transparent"></div>
+</div>
+<div class="p-3 bg-[#1748ce]/80 backdrop-blur-sm flex-1 flex flex-col justify-between lg:p-4">
+<div>
+<span class="block text-[9px] font-bold uppercase tracking-wider text-blue-200 leading-tight mb-1 lg:text-[10px]">SPIRITUAL GROWTH</span>
+<h4 class="text-sm font-bold text-white tracking-tight leading-snug lg:text-base">Grow in Christ</h4>
+</div>
+</div>
+</article>
+<article class="flex-shrink-0 w-[185px] bg-blue-900/40 rounded-xl overflow-hidden border border-white/10 flex flex-col group transition-transform active:scale-[0.98] lg:w-[260px]">
+<div class="h-56 w-full relative overflow-hidden bg-slate-800 lg:h-72">
+<div class="w-full h-full flex items-center justify-center text-4xl font-black tracking-tighter text-white bg-gradient-to-br from-cyan-500 to-blue-900 lg:text-6xl">CAREER</div>
+<div class="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-transparent to-transparent"></div>
+</div>
+<div class="p-3 bg-[#1748ce]/80 backdrop-blur-sm flex-1 flex flex-col justify-between lg:p-4">
+<div>
+<span class="block text-[9px] font-bold uppercase tracking-wider text-blue-200 leading-tight mb-1 lg:text-[10px]">PROFESSIONAL EDGE</span>
+<h4 class="text-sm font-bold text-white tracking-tight leading-snug lg:text-base">Purpose + excellence</h4>
+</div>
+</div>
+</article>
+<article class="flex-shrink-0 w-[185px] bg-blue-900/40 rounded-xl overflow-hidden border border-white/10 flex flex-col group transition-transform active:scale-[0.98] lg:w-[260px]">
+<div class="h-56 w-full relative overflow-hidden bg-slate-800 lg:h-72">
+<div class="w-full h-full flex items-center justify-center text-4xl font-black tracking-tighter text-white bg-gradient-to-br from-violet-500 to-blue-900 lg:text-6xl">LEGACY</div>
+<div class="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-transparent to-transparent"></div>
+</div>
+<div class="p-3 bg-[#1748ce]/80 backdrop-blur-sm flex-1 flex flex-col justify-between lg:p-4">
+<div>
+<span class="block text-[9px] font-bold uppercase tracking-wider text-blue-200 leading-tight mb-1 lg:text-[10px]">LONG-TERM IMPACT</span>
+<h4 class="text-sm font-bold text-white tracking-tight leading-snug lg:text-base">Build your future</h4>
+</div>
+</div>
+</article>
+<article class="flex-shrink-0 w-[185px] bg-blue-900/40 rounded-xl overflow-hidden border border-white/10 flex flex-col group transition-transform active:scale-[0.98] lg:w-[260px]">
+<div class="h-56 w-full relative overflow-hidden bg-slate-800 lg:h-72">
+<div class="w-full h-full flex items-center justify-center text-4xl font-black tracking-tighter text-white bg-gradient-to-br from-rose-500 to-blue-900 lg:text-6xl">SERVE</div>
+<div class="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-transparent to-transparent"></div>
+</div>
+<div class="p-3 bg-[#1748ce]/80 backdrop-blur-sm flex-1 flex flex-col justify-between lg:p-4">
+<div>
+<span class="block text-[9px] font-bold uppercase tracking-wider text-blue-200 leading-tight mb-1 lg:text-[10px]">COMMUNITY</span>
+<h4 class="text-sm font-bold text-white tracking-tight leading-snug lg:text-base">Lead with purpose</h4>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- END: Featured Speakers Section -->
+<!-- BEGIN: Bottom Footer Details -->
+<footer class="mt-auto px-5 pt-8 text-center text-xs text-blue-200/70 border-t border-white/10 lg:px-12 lg:pt-10" data-purpose="page-footer">
+<div class="flex justify-center items-center gap-6 mb-4 font-semibold text-white/90 text-[11px] tracking-wider uppercase lg:gap-10">
+<a class="hover:text-white" href="../itconf_exploring_the_future/code.html">Home</a>
+<a class="hover:text-white" href="../shift_1.0_attendee_registration/code.html">register</a>
+<a class="hover:text-white" href="../shift_1.0_contact_us/code.html">Contacts</a>
+</div>
+<div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-left text-[11px] leading-relaxed text-blue-100/90 mb-4 lg:p-6 lg:text-sm lg:max-w-4xl lg:mx-auto">
+<p>Every single one of us has a part to play in making this vision a reality. Whether through your prayers, serving, support or simply showing up to engage with the participants, your participation and presence matters deeply.</p>
+<p class="mt-2">Let’s come together to mentor, encourage, and build a generation that leads with both purpose and excellence in Christ.</p>
+<p class="mt-2 font-semibold text-white">Hope to see you there!</p>
+<div class="mt-4 border-t border-white/10 pt-3">
+<p>Warm regards and God bless,</p>
+<p class="mt-1 font-bold uppercase text-white">Justice Kelvin Larnyoh</p>
+<p>General Secretary, Worldwide Evangelism Service (WES)</p>
+</div>
+</div>
+<p class="text-[11px] text-blue-100/60 font-mono tracking-tight lg:text-sm">© 2026 Worldwide Evangelism Service (WES) x UENR SCC. All rights reserved.</p>
+</footer>
+<!-- END: Bottom Footer Details -->
+</div>
+<!-- END: Mobile App Container -->
+
+
+
+
+
+
+
+
+</body></html>
